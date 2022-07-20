@@ -80,4 +80,8 @@ require'nvim-treesitter.configs'.setup {
       ['<cr>'] = 'textsubjects-smart', -- works in visual mode
     }
   },
+
+  autotag = {
+    enable = true,
+  }
 }

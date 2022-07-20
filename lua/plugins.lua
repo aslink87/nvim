@@ -22,6 +22,10 @@ return require('packer').startup({
     -- Themes
     use { 'folke/tokyonight.nvim' }
     use {'ishan9299/nvim-solarized-lua'}
+    use({
+      "catppuccin/nvim",
+      as = "catppuccin"
+    })
 
     -- Treesitter
     use { 'nvim-treesitter/nvim-treesitter', config = "require('plugins.treesitter')" }
@@ -102,6 +106,7 @@ return require('packer').startup({
 
     -- Snippets & Language & Syntax
     use { 'windwp/nvim-autopairs', after = { 'nvim-treesitter', 'nvim-cmp' }, config = "require('plugins.autopairs')" }
+    use { 'windwp/nvim-ts-autotag' }
     use { 'p00f/nvim-ts-rainbow', after = { 'nvim-treesitter' } }
     use { 'mattn/emmet-vim' }
     use { 'lukas-reineke/indent-blankline.nvim', config = "require('plugins.indent')" }
