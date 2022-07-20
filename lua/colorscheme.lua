@@ -145,7 +145,7 @@ if EcoVim.colorscheme == 'catppuccin' then
       percentage = 0.15,
     },
     transparent_background = false,
-    term_colors = false,
+    term_colors = true,
     compile = {
       enabled = false,
       path = vim.fn.stdpath "cache" .. "/catppuccin",
@@ -211,7 +211,7 @@ if EcoVim.colorscheme == 'catppuccin' then
       neogit = false,
       vim_sneak = false,
       fern = false,
-      barbar = false,
+      barbar = true,
       bufferline = true,
       markdown = true,
       lightspeed = false,
@@ -243,6 +243,8 @@ if EcoVim.colorscheme == 'catppuccin' then
     CmpItemAbbrMatch       = { fg = "#569CD6", bg = "NONE"               },
     CmpItemAbbrMatchFuzzy  = { fg = "#569CD6", bg = "NONE"               },
   }
-
+  for group, hl in pairs(highlights) do
+    vim.api.nvim_set_hl(0, group, hl)
+  end
   vim.api.nvim_set_hl(0, "CmpBorderedWindow_FloatBorder", { fg = catppuccin_colors.blue0 })
 end
