@@ -26,6 +26,7 @@ return require('packer').startup({
       "catppuccin/nvim",
       as = "catppuccin"
     })
+    use {'gruvbox-community/gruvbox'}
 
     -- Treesitter
     use { 'nvim-treesitter/nvim-treesitter', config = "require('plugins.treesitter')" }
@@ -105,7 +106,11 @@ return require('packer').startup({
     use { 'Shatur/neovim-session-manager', config = "require('plugins.session-manager')" }
 
     -- Snippets & Language & Syntax
-    use { 'windwp/nvim-autopairs', after = { 'nvim-treesitter', 'nvim-cmp' }, config = "require('plugins.autopairs')" }
+    -- use { 'windwp/nvim-autopairs', after = { 'nvim-treesitter', 'nvim-cmp' }, config = "require('plugins.autopairs')" }
+    use {
+      "windwp/nvim-autopairs",
+        config = function() require("nvim-autopairs").setup {} end
+    }
     use { 'windwp/nvim-ts-autotag' }
     use { 'p00f/nvim-ts-rainbow', after = { 'nvim-treesitter' } }
     use { 'mattn/emmet-vim' }

@@ -246,3 +246,68 @@ if EcoVim.colorscheme == 'catppuccin' then
 
   vim.api.nvim_set_hl(0, "CmpBorderedWindow_FloatBorder", { fg = catppuccin_colors.blue0 })
 end
+
+if EcoVim.colorscheme == 'gruvbox' then
+  vim.cmd[[
+    colorscheme gruvbox
+  ]]
+  local g = vim.g
+  g.gruvbox_material_palette = "mix"
+  g.gruvbox_material_enable_italic = 1
+  g.gruvbox_material_diagnostic_text_highlight = 1
+  g.gruvbox_material_diagnostic_line_highlight = 1
+  g.gruvbox_material_diagnostic_virtual_text = "colored"
+  g.gruvbox_material_sign_column_background = "none"
+  local gruvbox_colors = tk_colors.setup({})
+  -- Lines
+  vim.highlight.link('CursorLineNR', 'EcovimSecondary', true)
+  vim.highlight.link('LineNr', 'Comment', true)
+
+  -- Floats/Windows
+  vim.highlight.create('NormalFloat', { guibg = "None", guifg = "None" }, false);
+  vim.highlight.create('FloatBorder', { guibg = "None" }, false);
+  vim.highlight.create('WhichKeyFloat', { guibg = "None" }, false);
+  vim.highlight.create('BufferTabpageFill', { guifg = "None" }, false);
+  vim.highlight.create('VertSplit', { guibg = "#16161e", guifg = "#16161e" }, false);
+
+  -- Telescope
+  vim.highlight.link('TelescopeTitle', 'EcovimSecondary', true);
+  vim.highlight.create('TelescopeNormal', { guibg = "None", guifg = "None" }, false);
+  vim.highlight.create('TelescopeBorder', { guibg = "None" }, false);
+  vim.highlight.link('TelescopeMatching', 'Constant', true);
+
+  -- Diagnostics
+
+  -- Misc
+  vim.highlight.link('GitSignsCurrentLineBlame', 'Comment', true);
+  vim.highlight.create('StatusLine', { guibg = "None" }, false);
+  vim.highlight.create('StatusLineNC', { guibg = "None" }, false);
+  vim.highlight.create('rainbowcol1', { guifg = gruvbox_colors.blue, ctermfg = 9 }, false);
+  vim.highlight.create('Boolean', { guifg = "#F7768E" }, false);
+  vim.highlight.link('BufferOffset', 'EcovimSecondary', true);
+
+  -- Completion Menu Colors
+  local highlights = {
+    CmpItemAbbr            = { fg = gruvbox_colors.dark3, bg = "NONE" },
+    CmpItemKindClass       = { fg = gruvbox_colors.orange             },
+    CmpItemKindConstructor = { fg = gruvbox_colors.purple             },
+    CmpItemKindFolder      = { fg = gruvbox_colors.blue2              },
+    CmpItemKindFunction    = { fg = gruvbox_colors.blue               },
+    CmpItemKindInterface   = { fg = gruvbox_colors.teal, bg = "NONE"  },
+    CmpItemKindKeyword     = { fg = gruvbox_colors.magneta2           },
+    CmpItemKindMethod      = { fg = gruvbox_colors.red                },
+    CmpItemKindReference   = { fg = gruvbox_colors.red1               },
+    CmpItemKindSnippet     = { fg = gruvbox_colors.dark3              },
+    CmpItemKindVariable    = { fg = gruvbox_colors.cyan, bg = "NONE"  },
+    CmpItemKindText        = { fg = "LightGrey"                          },
+    CmpItemMenu            = { fg = "#C586C0", bg = "NONE"               },
+    CmpItemAbbrMatch       = { fg = "#569CD6", bg = "NONE"               },
+    CmpItemAbbrMatchFuzzy  = { fg = "#569CD6", bg = "NONE"               },
+  }
+
+  vim.api.nvim_set_hl(0, "CmpBorderedWindow_FloatBorder", { fg = gruvbox_colors.blue0 })
+
+  for group, hl in pairs(highlights) do
+    vim.api.nvim_set_hl(0, group, hl)
+  end
+end
