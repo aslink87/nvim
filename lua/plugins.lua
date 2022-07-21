@@ -33,6 +33,7 @@ return require('packer').startup({
     use { 'nvim-treesitter/nvim-treesitter-textobjects', after = { 'nvim-treesitter' } }
     use { 'RRethy/nvim-treesitter-textsubjects', after = { 'nvim-treesitter' } }
     use { 'm-demare/hlargs.nvim', config = function() require('hlargs').setup() end }
+    use {'nvim-treesitter/playground'}
 
     -- Navigating (Telescope/Tree/Refactor)
     use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
