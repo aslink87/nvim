@@ -27,6 +27,7 @@ return require('packer').startup({
       as = "catppuccin"
     })
     use {'gruvbox-community/gruvbox'}
+    use {'tomasiser/vim-code-dark'}
 
     -- Treesitter
     use { 'nvim-treesitter/nvim-treesitter', config = "require('plugins.treesitter')" }
