@@ -3,7 +3,7 @@ return {
   dependencies = {
     -- "folke/neodev.nvim",
     "b0o/schemastore.nvim",
-    "williamboman/mason-lspconfig.nvim",
+    "mason-org/mason-lspconfig.nvim",
   },
   event = { "BufReadPre", "BufNewFile" },
   opts = {
