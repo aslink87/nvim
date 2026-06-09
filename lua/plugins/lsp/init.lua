@@ -11,6 +11,7 @@ return {
     servers = {
       cssls = { settings = { css = { lint = { unknownAtRules = "ignore" } } } },
       tailwindcss = { settings = { css = { lint = { unknownAtRules = "ignore" } } } },
+      -- eslint = { settings = { enabled = false } },
     },
   },
 }

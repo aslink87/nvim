@@ -35,4 +35,14 @@ local Kanagawa = {
   end,
 }
 
-return Kanagawa
+local Gruvbox = {
+  { "ellisonleao/gruvbox.nvim" },
+  {
+    "LazyVim/LazyVim",
+    opts = {
+      colorscheme = "gruvbox",
+    },
+  },
+}
+
+return Gruvbox
